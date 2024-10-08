@@ -23,6 +23,7 @@ div {
 }
 #synopsis{
     text-wrap: wrap;
+    word-break: break-all;
 }
 
 #synopsis,

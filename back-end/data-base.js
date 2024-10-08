@@ -1,11 +1,11 @@
 export class database {
     #filmes = new Map()
-    list(titulo, diretor, nota, id, synopsis) {
+    list(id , search) {
         this.#filmes.set(1, {
             titulo: "papagaio",
             nota: 5.5,
             diretor: "a",
-            synopsis: "pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+            synopsis:   "pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
             URL_trailer: "https://youtu.be/dQw4w9WgXcQ?feature=shared",
             URL_poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTan-5wmRcR0MyAYj6KMZLw7mOVnwZhuRI-A&s"
         })
@@ -36,17 +36,15 @@ export class database {
                 }
             })
             .filter(movie => {
-                if (id) {
-                    return (movie.id == id)
+                
+                if(search){
+                    
+                    return(
+                   movie.titulo.includes(search)
+                    )
                 }
-                if (nota) {
-                    return (movie.nota == nota)
-                }
-                if (diretor) {
-                    return (movie.diretor == diretor)
-                }
-                if (titulo) {
-                    return (movie.titulo == titulo)
+                if(id){
+                    return id == movie.id
                 }
                 else { return true }
             })

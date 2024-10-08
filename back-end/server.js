@@ -25,9 +25,10 @@ cine.post("/cinema", (request, reply) => {
 
 // lista todos os filmes
 cine.get("/cinema", (request) => {
-    const { titulo, diretor, nota, id } = request.query
-    const filmes = memory.list(titulo, diretor, nota, id)
-    console.log(filmes)
+    const { id, search } = request.query
+    console.log(search)
+    const filmes = memory.list(id , search)
+    
     return filmes
 
 })

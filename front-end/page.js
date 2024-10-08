@@ -7,7 +7,7 @@ async function load() {
 
     //Send Response
 
-    fetch(`${Server_URL}?search=""`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
+    fetch(`${Server_URL}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
         console.log(filmes)
         for (cont = 0; cont < filmes.length; cont++) {
             cards.innerHTML += `<div class="card">
@@ -17,16 +17,6 @@ async function load() {
             </div>`
         }
     })
-
-    // for(cont=0;cont < filmes.length;cont++){
-    //     alert(filmes[cont].nome)
-    // }
-    // cards.innerHTML += `<div class="card">
-    //             <p>pé de pano mortal</p>
-    //             <a href="index.html"><img src="imagens/mimikyu-removebg-preview.png" alt="poke">
-    //             </a>
-    //         </div>`
-
 }
 function setLocal(id) {
     localStorage.setItem(1, id)
@@ -84,4 +74,22 @@ function loadtop10() {
     })
 
 }
+function pesquisa(){
+    const cards = document.getElementById("position-card")
+    const search = document.getElementById("search").value
+    cards.innerHTML = ""
 
+
+    //Send Response
+
+    fetch(`${Server_URL}?search=${search}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
+        console.log(filmes)
+        for (cont = 0; cont < filmes.length; cont++) {
+            cards.innerHTML += `<div class="card">
+                <p>${filmes[cont].titulo}</p>
+                <a href="posterbase.html" onclick="setLocal(${filmes[cont].id})"><img src="${filmes[cont].URL_poster}" alt="poke">
+                </a>
+            </div>`
+        }
+    })
+}

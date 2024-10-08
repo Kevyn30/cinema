@@ -18,10 +18,6 @@ async function load() {
         }
     })
 }
-function setLocal(id) {
-    localStorage.setItem(1, id)
-    //localStorage.setarItem(CHAVE,VALOR)
-}
 function loadPoster() {
     const id = localStorage.getItem(1)
     fetch(`${Server_URL}?id=${id}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
@@ -32,6 +28,11 @@ function loadPoster() {
         document.getElementById("diretor").innerText = `Diretor: ${filmes[0].diretor}`
     })
 }
+function setLocal(id) {
+    localStorage.setItem(1, id)
+    //localStorage.setarItem(CHAVE,VALOR)
+}
+
 function loadtop10() {
     fetch(`${Server_URL}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
         filmes.sort((a, b) => {
@@ -52,8 +53,7 @@ function loadtop10() {
 
             <div class="top10Img">
                 <p class="title_poster"><strong>${filmes[cont].titulo}</strong></p>
-                <a href="posterbase.html">
-                    <img src="${filmes[cont].URL_poster}" alt="Cine_poster">
+                <a href="posterbase.html" onclick="setLocal(${filmes[cont].id})"><img src="${filmes[cont].URL_poster}" alt="poke">
                 </a>
             </div>
             <div class="top10Cont">

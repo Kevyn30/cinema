@@ -55,6 +55,7 @@ body {
     text-align: center;
     padding-top: 10px;
     word-break: break-all;
+    text-overflow: ellipsis;
 }
 .nota,.diretor{
     display: inline;

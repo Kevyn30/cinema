@@ -44,19 +44,20 @@ function loadtop10() {
 
         })
         const main = document.getElementById("main")
-        for (cont = 0; cont < 10 || cont < filmes.length; cont++) {
+        const limit = 80
+        for (cont = 0; cont < 10 && cont < filmes.length; cont++) {
             console.log(filmes[cont].nota)
             main.innerHTML += (
             `<section class="positionAll">
 
             <div class="top10Img">
-                <p class="title_poster">${filmes[cont].titulo}</p>
+                <p class="title_poster"><strong>${filmes[cont].titulo}</strong></p>
                 <a href="posterbase.html">
                     <img src="${filmes[cont].URL_poster}" alt="Cine_poster">
                 </a>
             </div>
             <div class="top10Cont">
-                <p class="sinopsy">${(filmes[cont].synopsis)} </p>
+                <p class="sinopsy">${(filmes[cont].synopsis.length <= limit)? filmes[cont].synopsis:filmes[cont].synopsis.slice(0,limit)+"..."} </p>
                 <p class="nota">Nota: ${(filmes[cont].nota)}</p>
                 <p class="diretor">Diretor: ${filmes[cont].diretor}</p>
 
@@ -64,13 +65,7 @@ function loadtop10() {
             </section>`
             )
         }
-        const element = document.querySelector("sinopsy")
-        const LIMT = 8
-        for (let sinopsy of element) {
-            const limt_caracter = sinopsy.innerText.length > LIMT
-            const NOlimit_caracter = limt_caracter ? `...` : ``
-            sinopsy.innerText = sinopsy.innerText.substring(0, LIMT) + Olimit_caracter
-        }
+        
     })
 
 }

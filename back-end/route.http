@@ -1,0 +1,15 @@
+POST http://localhost:3333/cinema
+Content-Type: application/json
+
+{
+    "titulo":"homem-homem:o homem mais homem do mundo.",
+    "autor": "graça aranha",
+    "diretor":"auto da compadecida",
+    "sinopsy":"1998",
+    "URL_trailer": "https://massgrave.dev/get"
+}
+###
+GET http://localhost:3333/cinema?id=4
+
+###
+DELETE http://localhost:3333/cinema

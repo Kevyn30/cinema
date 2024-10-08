@@ -1,0 +1,125 @@
+/* estilo geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+header {
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: rgb(14, 32, 32);
+    position: fixed ;
+
+}
+main{
+        bottom: 10px;
+        padding-top: 60px;
+}
+
+/* interface */
+h1 a {
+    text-decoration: none;
+    padding: 0 20%;
+}
+
+nav {
+    text-align: center;
+    margin: 0 auto;
+}
+
+ul {
+    display: inline-flex;
+}
+
+nav ul li {
+    padding: 10px;
+    text-align: center;
+    list-style: none;
+}
+
+nav ul li a {
+    font-weight: 600;
+    font-size: 15pt;
+    color: #ffff;
+    text-decoration: none;
+}
+
+/* carrocel */
+.carrocel {
+    margin: 0 10%;
+    width: 80%;
+    height: 400px;
+}
+
+.carrocel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* card's */
+
+.position-card {
+    margin: 0 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+
+.card img {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    margin-inline: auto;
+}
+
+.card p {
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    color: gold;
+    background-color: red;
+    margin: none;
+    padding: none;
+    
+    width: 200px;
+    font-weight: 600;
+    justify-content: center;
+
+}
+
+.card {
+    background-color: darkred;
+    margin: 10px;
+    width: 200px;
+    height: 300px;
+}
+
+.card a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    height: none;
+}
+
+/* animação de interação */
+.card:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background-color: blueviolet;
+}
+
+nav ul li a:hover {
+    color: blueviolet;
+    transition: 0.2s;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="formulario.css">
+
+    <title>adicionar filmes</title>
+</head>
+
+<body>
+    <header>
+        <h1><a href="index.html">Poke</a></h1>
+        <nav>
+            <ul>
+                <li><a href="top10.html">Top 10</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="ad.filmes.html">Adicionar Filmes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Adicione seu filme na lista!</h1>
+        <p>Por favor, ao adicionar um filme sejá breve e direto</p>
+        <fieldset>
+            <form action="" id="form">
+                <p>Titulo do filme</p>
+                <label for="titulo">
+                    <input type="text" id="titulo" required placeholder="Pé de pano mortal: Não entre com o pé sujo...">
+                </label>
+                <p>Diretor do filme</p>
+                <label for="diretor">
+                    <input type="text" id="diretor" required placeholder="Johnatan Smmiti">
+                </label>
+                <p>Sinopsi do filme</p>
+                <label for="synopsis">
+                    <textarea name="synopsis" required id="synopsis"
+                        placeholder="ele deu uma topada horrorozamente horroroza horrorizando a todos atodos ao seu redor."></textarea>
+                </label>
+                <p>Nota</p>
+                <label for="nota">
+                    <input type="number" step="0.01" max="10" id="nota" required placeholder="9.5">
+                </label>
+                <p>URL da Capa do filme</p>
+                <label for="URL_poster">
+                    <input type="url" id="URL_poster" required placeholder="https://...">
+                </label>
+                <p>URL do trailer do filme</p>
+                <label for="URL_trailer">
+                    <input type="url" id="URL_trailer" required placeholder="https://youtube.com.br">
+                </label>
+                <br>
+                <button type="submit">Enviar</button>
+            </form>
+
+        </fieldset>
+    </main>
+    <script src="form.js"></script>
+</body>
+
+</html>

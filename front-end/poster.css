@@ -1,0 +1,59 @@
+main {
+    color: #ffff
+}
+
+div {
+    display: flex;
+
+}
+
+#URL_poster {
+    margin: auto;
+    width: 60%;
+    box-shadow: #6e6e6e 5px 5px 16px;
+}
+
+#titulo {
+    padding-top: 25px;
+    font-size: 26pt;
+    text-align: center;
+
+}
+#synopsis{
+    text-wrap: wrap;
+}
+
+#synopsis,
+#diretor {
+    margin: 20px 10%;
+    font-size: 17pt;
+    font-weight: 400;
+    padding-top: 20px;
+}
+
+#diretor {
+    font-weight: 550;
+    padding-bottom: 20px;
+}
+
+section {
+    margin: 60px;
+    background-color: #6e6e6e8a;
+    border-radius: 10px;
+}
+div.link{
+    width: 100%;
+}
+
+#URL_trailer,#back{
+    width: none ;
+}
+
+.link{
+    justify-content:space-around ;
+    display: flex;
+}
+.link a img{
+    width: 80px;
+}
+

@@ -3,7 +3,7 @@ const Server_URL = "http://localhost:3333/cinema"
 async function load() {
     const cards = document.getElementById("position-card")
     cards.innerHTML = ""
-    
+
 
     //Send Response
 
@@ -55,9 +55,9 @@ function loadtop10() {
         })
         const main = document.getElementById("main")
         for (cont = 0; cont < 10 || cont < filmes.length; cont++) {
-            console.log(filmes[cont])
-               main.innerHTML += (            
-                    `<section class="positionAll">
+            console.log(filmes[cont].nota)
+            main.innerHTML += (
+            `<section class="positionAll">
 
             <div class="top10Img">
                 <p class="title_poster">${filmes[cont].titulo}</p>
@@ -71,15 +71,15 @@ function loadtop10() {
                 <p class="diretor">Diretor: ${filmes[cont].diretor}</p>
 
             </div>
-        </section>`
-                )
+            </section>`
+            )
         }
-        const element= document.getElementById("synopsis")
+        const element = document.querySelector("sinopsy")
         const LIMT = 8
-        for(let synopsis of element){
-            const limt_caracter= synopsis.innerText.length > LIMT
-            const NOlimit_caracter=limt_caracter ? `...`:``
-            synopsis.innerText = synopsis.innerText.substring(0, LIMT)+Olimit_caracter 
+        for (let sinopsy of element) {
+            const limt_caracter = sinopsy.innerText.length > LIMT
+            const NOlimit_caracter = limt_caracter ? `...` : ``
+            sinopsy.innerText = sinopsy.innerText.substring(0, LIMT) + Olimit_caracter
         }
     })
 

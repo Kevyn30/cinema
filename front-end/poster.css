@@ -1,15 +1,17 @@
+/* style all */
 main {
     color: #ffff
 }
 
 div {
     display: flex;
-
 }
-
+/* style poster */
 #URL_poster {
+    object-fit: cover;
     margin: auto;
-    width: 60%;
+    height:30%;
+    width: 20%;
     box-shadow: #6e6e6e 5px 5px 16px;
 }
 

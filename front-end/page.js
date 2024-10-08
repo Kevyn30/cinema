@@ -7,7 +7,7 @@ async function load() {
 
     //Send Response
 
-    fetch(`${Server_URL}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
+    fetch(`${Server_URL}?search=""`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
         console.log(filmes)
         for (cont = 0; cont < filmes.length; cont++) {
             cards.innerHTML += `<div class="card">
@@ -66,7 +66,7 @@ function loadtop10() {
                 </a>
             </div>
             <div class="top10Cont">
-                <p class="sinopsy"> lol  ${(filmes[cont].synopsis)} </p>
+                <p class="sinopsy">${(filmes[cont].synopsis)} </p>
                 <p class="nota">Nota: ${filmes[cont].nota}</p>
                 <p class="diretor">Diretor: ${filmes[cont].diretor}</p>
 

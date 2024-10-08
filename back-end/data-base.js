@@ -2,26 +2,26 @@ export class database {
     #filmes = new Map()
     list(titulo, diretor, nota, id, synopsis) {
         this.#filmes.set(1, {
-            titulo: "poke",
+            titulo: "papagaio",
             nota: 5.5,
-            diretor: "lidia",
-            synopsis: "Filme muito daora onde o Kevyn sabe programar",
+            diretor: "a",
+            synopsis: "pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
             URL_trailer: "https://youtu.be/dQw4w9WgXcQ?feature=shared",
             URL_poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTan-5wmRcR0MyAYj6KMZLw7mOVnwZhuRI-A&s"
         })
         this.#filmes.set(2, {
-            titulo: "poke2",
+            titulo: "Naruto: The last",
             nota: 9.5,
-            diretor: "kevyn",
+            diretor: "Tsuneo Kobayashi",
             synopsis: "Filme onde o Naruto vai pra lua e dá uma de astronauta",
             URL_trailer: "https://youtu.be/dQw4w9WgXcQ?feature=shared",
             URL_poster: "https://upload.wikimedia.org/wikipedia/pt/thumb/f/f5/The_Last_Naruto_the_Movie.jpg/200px-The_Last_Naruto_the_Movie.jpg"
         })
         this.#filmes.set(3, {
-            titulo: "poke3",
+            titulo: "Hora de aventura",
             nota: 7.5,
-            diretor: "icaro",
-            synopsis: "Filme hora de ",
+            diretor: "Pendleton Ward",
+            synopsis: "Filme de hora de aventura ",
             URL_trailer: "https://youtu.be/dQw4w9WgXcQ?feature=shared",
             URL_poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXtYWtX5Pf99fKX434XNY2dE7qw_obPHinuQ&s"
         })

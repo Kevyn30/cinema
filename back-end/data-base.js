@@ -38,8 +38,7 @@ export class database {
             .filter(movie => {
                 
                 if(search){
-                    
-                    return(
+                    return (
                    movie.titulo.includes(search)
                     )
                 }

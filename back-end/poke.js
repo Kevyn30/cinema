@@ -12,6 +12,7 @@ const produtos = [
     { id: 4, nome: `tv`, preco: 100, temDesconto: true, quantidade: 2, },
     { id: 5, nome: `pitaya`, preco: 10.5, temDesconto: false, quantidade: 5, }
 ];
+toLowercase
 const produtosNovos = produtos.map(produto => {
 
     const novopreco = produto.temDesconto ? produto.preco * 0.9 : produto.preco;

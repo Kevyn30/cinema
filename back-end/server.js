@@ -1,6 +1,6 @@
 import { fastify } from "fastify";
 import cors from "@fastify/cors";
-import { database } from "/home/ravtec/Área de Trabalho/estágio/cinema/back-end/data-base.js";
+import { database } from "/home/ravtec/Área de Trabalho/cinema/back-end/data-base.js";
 
 
 const cine = fastify()
@@ -32,7 +32,7 @@ cine.get("/cinema", (request) => {
 
 })
 
-cine.delete('/cinema',(request, reply) => {
+cine.delete("/cinema",(request, reply) => {
     const filmeID = request.params.id
     
     memory.delete(filmeID)

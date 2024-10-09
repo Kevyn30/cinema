@@ -13,7 +13,7 @@ export class database {
             titulo: "Naruto: The last",
             nota: 9.5,
             diretor: "Tsuneo Kobayashi",
-            synopsis: "Filme onde o Naruto vai pra lua e dá uma de astronauta",
+            synopsis: "Hanabi Hyuuga, a irmã mais nova de Hinata, é sequestrada por Toneri Ootsutsuki. Naruto Uzumaki une forças para ajudar a irmã caçula de seu novo amor, mas suas habilidades são postas à prova quando perde sua forma mais poderosa.",
             URL_trailer: "https://youtu.be/dQw4w9WgXcQ?feature=shared",
             URL_poster: "https://upload.wikimedia.org/wikipedia/pt/thumb/f/f5/The_Last_Naruto_the_Movie.jpg/200px-The_Last_Naruto_the_Movie.jpg"
         })
@@ -21,7 +21,7 @@ export class database {
             titulo: "Hora de aventura",
             nota: 7.5,
             diretor: "Pendleton Ward",
-            synopsis: "Filme de hora de aventura ",
+            synopsis: "Finn vive grandes aventuras na terra de Ooo na companhia de seu melhor amigo, Jake. De viagens a reinos alucinantes a lutas contra vampiros, os dois estão prontos para enfrentar qualquer perigo.",
             URL_trailer: "https://youtu.be/dQw4w9WgXcQ?feature=shared",
             URL_poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXtYWtX5Pf99fKX434XNY2dE7qw_obPHinuQ&s"
         })
@@ -37,9 +37,9 @@ export class database {
             })
             .filter(movie => {
                 
-                if(search){
+                if (search){
                     return (
-                   movie.titulo.includes(search)
+                   movie.titulo.toLowerCase().includes(search.toLowerCase())
                     )
                 }
                 if(id){

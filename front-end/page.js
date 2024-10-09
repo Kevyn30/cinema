@@ -8,7 +8,7 @@ async function load() {
     //Send Response
 
     fetch(`${Server_URL}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
-        console.log(filmes)
+        
         for (cont = 0; cont < filmes.length; cont++) {
             cards.innerHTML += `<div class="card">
                 <p>${filmes[cont].titulo}</p>
@@ -47,7 +47,7 @@ function loadtop10() {
         const main = document.getElementById("main")
         const limit = 80
         for (cont = 0; cont < 10 && cont < filmes.length; cont++) {
-            console.log(filmes[cont].nota)
+            
             main.innerHTML += (
             `<section class="positionAll">
 

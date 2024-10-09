@@ -11,10 +11,11 @@ await cine.register(cors, {})
 
 cine.post("/cinema", (request, reply) => {
     const { titulo, diretor, synopsis, nota, URL_trailer, URL_poster } = request.body
-
+    const favorite = false
     memory.create({
         titulo,
         diretor,
+        favorite,
         synopsis,
         nota,
         URL_trailer,

@@ -8,13 +8,16 @@ async function load() {
     //Send Response
 
     fetch(`${Server_URL}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
-        
+
         for (cont = 0; cont < filmes.length; cont++) {
             cards.innerHTML += `<div class="card">
-                <p>${filmes[cont].titulo}</p>
-                <a href="posterbase.html" onclick="setLocal(${filmes[cont].id})"><img src="${filmes[cont].URL_poster}" alt="poke">
-                </a>
-            </div>`
+            <a href="posterbase.html" onclick="setLocal(${filmes[cont].id})">
+            <div class="absolute">
+            <p>${filmes[cont].titulo}</p>
+            <img src="imagens/no_favorite.png" alt="" class="">    
+            </div class="img-favorite">
+                <img src="${filmes[cont].URL_poster}" alt="poke" class="card_img">
+            </a></div></div>`
         }
     })
 }
@@ -47,9 +50,9 @@ function loadtop10() {
         const main = document.getElementById("main")
         const limit = 80
         for (cont = 0; cont < 10 && cont < filmes.length; cont++) {
-            
+
             main.innerHTML += (
-            `<section class="positionAll">
+                `<section class="positionAll">
 
             <div class="top10Img">
                 <p class="title_poster"><strong>${filmes[cont].titulo}</strong></p>
@@ -57,7 +60,7 @@ function loadtop10() {
                 </a>
             </div>
             <div class="top10Cont">
-                <p class="sinopsy">${(filmes[cont].synopsis.length <= limit)? filmes[cont].synopsis:filmes[cont].synopsis.slice(0,limit)+"..."} </p>
+                <p class="sinopsy">${(filmes[cont].synopsis.length <= limit) ? filmes[cont].synopsis : filmes[cont].synopsis.slice(0, limit) + "..."} </p>
                 <p class="nota">Nota: ${(filmes[cont].nota)}</p>
                 <p class="diretor">Diretor: ${filmes[cont].diretor}</p>
 
@@ -65,11 +68,24 @@ function loadtop10() {
             </section>`
             )
         }
-        
+
     })
 
 }
-function pesquisa(){
+function favoritos() {
+    fetch(`${Server_URL}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
+        for (cont = 0; cont < filmes.favorite.length; cont++)
+                main.innerHTML += (
+                    `<section class="position-card" id="position-card">
+                <div class="card">
+                    <p>${filmes[cont].titulo}</p>
+                    <a href="posterbase.html" onclick="setLocal(${filmes[cont].id})"><img src="${filmes[cont].URL_poster}" alt="poke"></a>
+                </div>
+            </section>`
+                )
+    })
+}
+function pesquisa() {
     const cards = document.getElementById("position-card")
     const search = document.getElementById("search").value
     cards.innerHTML = ""

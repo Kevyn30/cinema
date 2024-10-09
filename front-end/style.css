@@ -71,7 +71,10 @@ nav ul li a {
 
 
 /* card's */
-
+a{
+    width: 100%;
+    height: 100%;
+}
 .position-card {
     margin: 0 10%;
     display: flex;
@@ -80,17 +83,28 @@ nav ul li a {
     justify-content: space-around;
 }
 
-
 .card img {
     object-fit: fill;
     width: 100%;
     height: 100%;
-    margin-inline: auto;
+    
 }
 
-.card p {
+.absolute img{
+   width: calc(22%);
+   height: calc(23%);
+   padding-top: 25px;
+
+}
+.absolute{
+    width: 200px;
+    height: 300px;
     position: absolute;
     display: flex;
+    z-index: 2;
+}
+.absolute p {
+    position: absolute;
     z-index: 1;
     color: gold;
     background-color: red;
@@ -114,6 +128,7 @@ nav ul li a {
     color: white;
     font-weight: 600;
     height: none;
+    display: flex;
 }
 
 /* animação de interação */

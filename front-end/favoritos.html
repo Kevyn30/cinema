@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="favorite/top10.css">
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>Favoritos</title>
+    <title>Top 10</title>
 </head>
-
-<body>
+<body onload="favoritos()">
     <header>
         <h1><a href="index.html">Poke</a></h1>
         <nav>
@@ -21,7 +18,7 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main id="main">
         <section class="position-card" id="position-card">
             <div class="card">
                 <p>pé de pano mortal</p>
@@ -38,7 +35,7 @@
             </div>
         </section>
     </main>
-
+    <script src="page.js"></script>
 </body>
 
 </html>

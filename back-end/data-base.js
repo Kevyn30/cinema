@@ -2,16 +2,18 @@ export class database {
     #filmes = new Map()
     list(id , search) {
         this.#filmes.set(1, {
-            titulo: "papagaio",
-            nota: 5.5,
-            diretor: "a",
-            synopsis:   "pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+            titulo: "Pokémon: Detetive Pikachu",
+            nota: 8.8,
+            favorite: false,
+            diretor: "Rob Letterman",
+            synopsis:"Um jovem une forças com o detetive Pikachu para desvendar o mistério por trás do desaparecimento de seu pai. Perseguindo pistas pelas ruas de Ryme City, a dupla dinâmica logo descobre uma trama desonesta que representa uma ameaça ao universo Pokémon.",
             URL_trailer: "https://youtu.be/dQw4w9WgXcQ?feature=shared",
-            URL_poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTan-5wmRcR0MyAYj6KMZLw7mOVnwZhuRI-A&s"
+            URL_poster: "https://musicart.xboxlive.com/7/90045100-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080"
         })
         this.#filmes.set(2, {
             titulo: "Naruto: The last",
             nota: 9.5,
+            favorite: true,
             diretor: "Tsuneo Kobayashi",
             synopsis: "Hanabi Hyuuga, a irmã mais nova de Hinata, é sequestrada por Toneri Ootsutsuki. Naruto Uzumaki une forças para ajudar a irmã caçula de seu novo amor, mas suas habilidades são postas à prova quando perde sua forma mais poderosa.",
             URL_trailer: "https://youtu.be/dQw4w9WgXcQ?feature=shared",
@@ -20,6 +22,7 @@ export class database {
         this.#filmes.set(3, {
             titulo: "Hora de aventura",
             nota: 7.5,
+            favorite: false,
             diretor: "Pendleton Ward",
             synopsis: "Finn vive grandes aventuras na terra de Ooo na companhia de seu melhor amigo, Jake. De viagens a reinos alucinantes a lutas contra vampiros, os dois estão prontos para enfrentar qualquer perigo.",
             URL_trailer: "https://youtu.be/dQw4w9WgXcQ?feature=shared",
@@ -54,6 +57,7 @@ export class database {
 
     create(filme) {
         const filmesID = this.#filmes.size + 1
+        console.log(filme)
         this.#filmes.set(filmesID, filme)
     }
     update(titulo, id) {

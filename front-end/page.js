@@ -76,6 +76,8 @@ function favoritos() {
     const cards = document.getElementById("position-card")
     fetch(`${Server_URL}?favorite=true`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
         console.log(filmes)
+
+        
         for (cont = 0; cont < filmes.length; cont++) {
             cards.innerHTML += `<div class="card">
             <a href="posterbase.html" onclick="setLocal(${filmes[cont].id})">
@@ -87,6 +89,14 @@ function favoritos() {
             </a></div></div>`
         }
     })
+}
+function favoritar(){
+    const favorito = filmes.favorite
+    if(favorito === false){
+        favorito = true
+
+    }
+console.log()    
 }
 function pesquisa() {
     const cards = document.getElementById("position-card")

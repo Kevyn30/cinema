@@ -1,6 +1,6 @@
 export class database {
     #filmes = new Map()
-    list(id , search) {
+    list(id , search,favorite) {
         this.#filmes.set(1, {
             titulo: "Pokémon: Detetive Pikachu",
             nota: 8.8,
@@ -44,6 +44,9 @@ export class database {
                     return (
                    movie.titulo.toLowerCase().includes(search.toLowerCase())
                     )
+                }
+                if(favorite){
+                    return movie.favorite == true
                 }
                 if(id){
                     return id == movie.id

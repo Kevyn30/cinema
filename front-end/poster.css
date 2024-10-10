@@ -14,7 +14,9 @@ div {
     width: 20%;
     box-shadow: #6e6e6e 5px 5px 16px;
 }
-
+.favorite img{
+    width: 30px;
+}
 #titulo {
     padding-top: 25px;
     font-size: 26pt;
@@ -50,6 +52,16 @@ div.link{
 
 #URL_trailer,#back{
     width: none ;
+}
+#back{
+    display: flex;
+    justify-content: start;
+    padding-left: 50px;
+}
+#URL_trailer{
+    display: flex;
+    justify-content: end;
+    padding-right: 55px;
 }
 
 .link{

@@ -73,16 +73,19 @@ function loadtop10() {
 
 }
 function favoritos() {
-    fetch(`${Server_URL}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
-        for (cont = 0; cont < filmes.favorite.length; cont++)
-                main.innerHTML += (
-                    `<section class="position-card" id="position-card">
-                <div class="card">
-                    <p>${filmes[cont].titulo}</p>
-                    <a href="posterbase.html" onclick="setLocal(${filmes[cont].id})"><img src="${filmes[cont].URL_poster}" alt="poke"></a>
-                </div>
-            </section>`
-                )
+    const cards = document.getElementById("position-card")
+    fetch(`${Server_URL}?favorite=true`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
+        console.log(filmes)
+        for (cont = 0; cont < filmes.length; cont++) {
+            cards.innerHTML += `<div class="card">
+            <a href="posterbase.html" onclick="setLocal(${filmes[cont].id})">
+            <div class="absolute">
+            <p>${filmes[cont].titulo}</p>
+            <img src="imagens/no_favorite.png" alt="" id="">    
+            </div class="img-favorite">
+                <img src="${filmes[cont].URL_poster}" alt="poke" class="card_img">
+            </a></div></div>`
+        }
     })
 }
 function pesquisa() {
@@ -97,10 +100,13 @@ function pesquisa() {
         console.log(filmes)
         for (cont = 0; cont < filmes.length; cont++) {
             cards.innerHTML += `<div class="card">
-                <p>${filmes[cont].titulo}</p>
-                <a href="posterbase.html" onclick="setLocal(${filmes[cont].id})"><img src="${filmes[cont].URL_poster}" alt="poke">
-                </a>
-            </div>`
+            <a href="posterbase.html" onclick="setLocal(${filmes[cont].id})">
+            <div class="absolute">
+            <p>${filmes[cont].titulo}</p>
+            <img src="imagens/no_favorite.png" alt="" class="">    
+            </div class="img-favorite">
+                <img src="${filmes[cont].URL_poster}" alt="poke" class="card_img">
+            </a></div></div>`
         }
     })
 }

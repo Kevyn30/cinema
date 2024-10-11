@@ -1,9 +1,11 @@
+
+
 const filmes = [{ nome: "pokemon" }, { nome: "Digimon" }, { nome: "lol" }]
 const Server_URL = "http://localhost:3333/cinema"
 async function load() {
     const cards = document.getElementById("position-card")
     cards.innerHTML = ""
-
+    
 
     //Send Response
 
@@ -29,6 +31,7 @@ function loadPoster() {
         document.getElementById("synopsis").innerText = filmes[0].synopsis
         document.getElementById("titulo").innerText = filmes[0].titulo
         document.getElementById("diretor").innerText = `Diretor: ${filmes[0].diretor}`
+
     })
 }
 function setLocal(id) {
@@ -77,7 +80,7 @@ function favoritos() {
     fetch(`${Server_URL}?favorite=true`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
         console.log(filmes)
 
-        
+
         for (cont = 0; cont < filmes.length; cont++) {
             cards.innerHTML += `<div class="card">
             <a href="posterbase.html" onclick="setLocal(${filmes[cont].id})">
@@ -90,13 +93,19 @@ function favoritos() {
         }
     })
 }
-function favoritar(){
-    const favorito = filmes.favorite
-    if(favorito === false){
-        favorito = true
+function favoritar() {
+    const id = localStorage.getItem(1)
+     fetch(`${Server_URL}?id=${id}`, {method:"PUT"}).then((response) => response.json())
+     fetch(`${Server_URL}?id=${id}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
+    const favorito= filmes.favorite
+    if(favorito){
+        
+    }else{
+        
 
     }
-console.log()    
+
+    })
 }
 function pesquisa() {
     const cards = document.getElementById("position-card")

@@ -26,24 +26,17 @@ cine.post("/cinema", (request, reply) => {
 })
 cine.put("/cinema", (request, reply) => {
 
-    const favorite = request.params.id
-    const { titulo, diretor, synopsis, nota, URL_trailer, URL_poster } = requed.body
-    memory.update(favorite, {
-        titulo,
-        diretor,
-        favorite,
-        synopsis,
-        nota,
-        URL_trailer,
-        URL_poster
-    })
+    const id = request.query.id
+    const filme1 = memory.list(id)
+
+    memory.update(id,filme1)
     return reply.status(204).send()
 })
 // lista todos os filmes
 cine.get("/cinema", (request) => {
-    const { id, search,favorite } = request.query
-    console.log(search)
-    const filmes = memory.list(id, search,favorite)
+    const { id, search, favorite } = request.query
+
+    const filmes = memory.list(id, search, favorite)
 
     return filmes
 

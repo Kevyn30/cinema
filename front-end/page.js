@@ -5,7 +5,7 @@ const Server_URL = "http://localhost:3333/cinema"
 async function load() {
     const cards = document.getElementById("position-card")
     cards.innerHTML = ""
-    
+
 
     //Send Response
 
@@ -95,16 +95,14 @@ function favoritos() {
 }
 function favoritar() {
     const id = localStorage.getItem(1)
-     fetch(`${Server_URL}?id=${id}`, {method:"PUT"}).then((response) => response.json())
-     fetch(`${Server_URL}?id=${id}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
-    const favorito= filmes.favorite
-    if(favorito){
-        
-    }else{
-        
-
-    }
-
+    fetch(`${Server_URL}?id=${id}`, { method: "PUT" }).then((response) => response.json())
+    fetch(`${Server_URL}?id=${id}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
+        const favorito = filmes[0].id
+        if (favorito) {
+            favorito = false
+        }else{
+            favorito = true
+        }
     })
 }
 function pesquisa() {

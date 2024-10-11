@@ -4,7 +4,7 @@ export class database {
         this.#filmes.set(1, {
             titulo: "Pokémon: Detetive Pikachu",
             nota: 8.8,
-            favorite: false,
+            favorite: true,
             diretor: "Rob Letterman",
             synopsis: "Um jovem une forças com o detetive Pikachu para desvendar o mistério por trás do desaparecimento de seu pai. Perseguindo pistas pelas ruas de Ryme City, a dupla dinâmica logo descobre uma trama desonesta que representa uma ameaça ao universo Pokémon.",
             URL_trailer: "https://youtu.be/dQw4w9WgXcQ?feature=shared",
@@ -64,12 +64,13 @@ export class database {
     }
     update(id, filme1) {
         id = Number(id)
+
         delete filme1[0].id
 
-        if (filme1[0].favorite) {
-            
+        if (filme1[0].id) {
+            filme1[0].id = false
         } else {
-            
+            filme1[0].id = true
         }
         console.log(this.#filmes.get(2))
     }

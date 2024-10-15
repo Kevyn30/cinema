@@ -1,6 +1,7 @@
 /* style all */
 main {
-    color: #ffff
+    color: #ffff;
+    display: block;
 }
 
 div {
@@ -16,11 +17,11 @@ div {
 }
 .favorite img{
     display: flex;
-    position: absolute;
     z-index: 1;
-    padding-left: 70px;
-    padding-top: 60px;
-    width: 12%;
+    margin-left: 10%;
+    padding-top: auto;
+    padding-bottom: 10px;
+    width: 10%;
 }
 #titulo {
     padding-top: 25px;

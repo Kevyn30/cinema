@@ -16,7 +16,7 @@ async function load() {
             <a href="posterbase.html" onclick="setLocal(${filmes[cont].id})">
             <div class="absolute">
             <p>${filmes[cont].titulo}</p>
-            <img src= ${filmes[0].favorite?"imagens/favorite.png":"imagens/no_favorite.png"}>    
+            <img src="${filmes[cont].favorite?"imagens/favorite.png":"imagens/no_favorite.png"}" id="Nfavorite" alt="" class="star">>    
             </div class="img-favorite">
                 <img src="${filmes[cont].URL_poster}" alt="poke" class="card_img">
             </a></div></div>`

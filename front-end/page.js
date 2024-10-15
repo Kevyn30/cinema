@@ -1,7 +1,7 @@
 
 
 const filmes = [{ nome: "pokemon" }, { nome: "Digimon" }, { nome: "lol" }]
-const Server_URL = "http://localhost:3333/cinema"
+const Server_URL = "http://localhost:3334/cinema"
 async function load() {
     const cards = document.getElementById("position-card")
     cards.innerHTML = ""
@@ -16,7 +16,7 @@ async function load() {
             <a href="posterbase.html" onclick="setLocal(${filmes[cont].id})">
             <div class="absolute">
             <p>${filmes[cont].titulo}</p>
-            <img src="imagens/no_favorite.png" alt="" class="">    
+            <img src= ${filmes[0].favorite?"imagens/favorite.png":"imagens/no_favorite.png"}>    
             </div class="img-favorite">
                 <img src="${filmes[cont].URL_poster}" alt="poke" class="card_img">
             </a></div></div>`
@@ -31,7 +31,8 @@ function loadPoster() {
         document.getElementById("synopsis").innerText = filmes[0].synopsis
         document.getElementById("titulo").innerText = filmes[0].titulo
         document.getElementById("diretor").innerText = `Diretor: ${filmes[0].diretor}`
-
+        document.getElementById("Nfavorite").src = filmes[0].favorite? "imagens/favorite.png":"imagens/no_favorite.png"
+        
     })
 }
 function setLocal(id) {
@@ -80,13 +81,11 @@ function favoritos() {
     fetch(`${Server_URL}?favorite=true`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
         console.log(filmes)
 
-
         for (cont = 0; cont < filmes.length; cont++) {
             cards.innerHTML += `<div class="card">
             <a href="posterbase.html" onclick="setLocal(${filmes[cont].id})">
             <div class="absolute">
-            <p>${filmes[cont].titulo}</p>
-            <img src="imagens/no_favorite.png" alt="" id="">    
+            <p>${filmes[cont].titulo}</p>   
             </div class="img-favorite">
                 <img src="${filmes[cont].URL_poster}" alt="poke" class="card_img">
             </a></div></div>`
@@ -96,14 +95,7 @@ function favoritos() {
 function favoritar() {
     const id = localStorage.getItem(1)
     fetch(`${Server_URL}?id=${id}`, { method: "PUT" }).then((response) => response.json())
-    fetch(`${Server_URL}?id=${id}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
-        const favorito = filmes[0].id
-        if (favorito) {
-            favorito = false
-        }else{
-            favorito = true
-        }
-    })
+
 }
 function pesquisa() {
     const cards = document.getElementById("position-card")

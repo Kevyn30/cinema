@@ -10,8 +10,7 @@ await cine.register(cors, {})
 //criar filmes
 
 cine.post("/cinema", (request, reply) => {
-    const id = request.body
-    const { titulo, diretor, synopsis, nota, URL_trailer, URL_poster } = database.list()
+    const { titulo, diretor, synopsis, nota, URL_trailer, URL_poster } = request.body
     const favorite = false
     memory.create({
         titulo,
@@ -52,4 +51,4 @@ cine.delete("/cinema", (request, reply) => {
 
 
 //rota de reqeusição e resposta
-cine.listen({ port: 3333 })
+cine.listen({ port: 3334 })

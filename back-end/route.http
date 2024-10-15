@@ -1,4 +1,4 @@
-POST http://localhost:3333/cinema
+POST http://localhost:3334/cinema
 Content-Type: application/json
 
 {
@@ -9,7 +9,7 @@ Content-Type: application/json
     "URL_trailer": "https://massgrave.dev/get"
 }
 ###
-GET http://localhost:3333/cinema?id=4
+GET http://localhost:3334/cinema
 
 ###
 DELETE http://localhost:3333/cinema

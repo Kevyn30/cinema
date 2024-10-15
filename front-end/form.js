@@ -6,7 +6,7 @@ form.addEventListener('submit', (event) => {
     sendForm()
 })
 function sendForm(){
-    const Server_URL= "http://localhost:3333/cinema"
+    const Server_URL= "http://localhost:3334/cinema"
     const newBody = {}
     for(field of document.getElementById("form").elements) {
         newBody[field.id] = field.value

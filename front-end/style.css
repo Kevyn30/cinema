@@ -88,6 +88,7 @@ nav ul li a {
 a{
     width: 100%;
     height: 100%;
+    z-index: 8;
 }
 .position-card {
     margin: 0 10%;
@@ -110,16 +111,19 @@ a{
    padding-top: 25px;
 
 }
+.favorite_icon{
+    position: absolute;
+    z-index: 1;
+    margin-top: 20px;
+    width: 50px;
+}
 .absolute{
     width: 200px;
-    height: 300px;
     position: absolute;
-    display: flex;
-    z-index: 2;
 }
 .absolute p {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     color: gold;
     background-color: red;
     margin: none;
@@ -137,13 +141,7 @@ a{
     height: 300px;
 }
 
-.card a {
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    height: none;
-    display: flex;
-}
+
 
 /* animação de interação */
 .card:hover {
@@ -156,3 +154,4 @@ nav ul li a:hover {
     color: blueviolet;
     transition: 0.2s;
 }
+/* favorite icon */

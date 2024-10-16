@@ -4,7 +4,7 @@ const filmes = [{ nome: "pokemon" }, { nome: "Digimon" }, { nome: "lol" }]
 const Server_URL = "http://localhost:3334/cinema"
 async function load() {
     const cards = document.getElementById("position-card")
-    
+
 
 
     //Send Response
@@ -19,7 +19,7 @@ async function load() {
                     
                 </div>
                 <div class="favorite_icon">
-                    <img src="${filmes[cont].favorite?"imagens/favorite.png":"imagens/no_favorite.png"}" id="Nfavorite${filmes[cont].id}" alt="" class="star" onclick="favoritar(${filmes[cont].id})">
+                    <img src="${filmes[cont].favorite ? "imagens/favorite.png" : "imagens/no_favorite.png"}" id="Nfavorite${filmes[cont].id}" alt="" class="star" onclick="favoritar(${filmes[cont].id})">
                 </div>
                 <a href="posterbase.html" onclick="setLocal(${filmes[cont].id}">
                     <img src="${filmes[cont].URL_poster}" alt="poke" class="card_img">
@@ -37,8 +37,8 @@ function loadPoster() {
         document.getElementById("synopsis").innerText = filmes[0].synopsis
         document.getElementById("titulo").innerText = filmes[0].titulo
         document.getElementById("diretor").innerText = `Diretor: ${filmes[0].diretor}`
-        document.getElementById("Nfavorite").src = filmes[0].favorite? "imagens/favorite.png":"imagens/no_favorite.png"
-        
+        document.getElementById("Nfavorite").src = filmes[0].favorite ? "imagens/favorite.png" : "imagens/no_favorite.png"
+
     })
 }
 function setLocal(id) {
@@ -88,33 +88,37 @@ function favoritos() {
         console.log(filmes)
 
         for (cont = 0; cont < filmes.length; cont++) {
-            cards.innerHTML += `<div class="card">
-            <a href="posterbase.html" onclick="setLocal(${filmes[cont].id})">
-            <div class="absolute">
-            <p>${filmes[cont].titulo}</p>   
-            </div class="img-favorite">
-                <img src="${filmes[cont].URL_poster}" alt="poke" class="card_img">
-            </a></div></div>`
+            cards.innerHTML += `
+            <div class="card">
+                <div class="absolute">
+                    <p>${filmes[cont].titulo}</p>
+                    
+                </div>
+                <a href="posterbase.html" onclick="setLocal(${filmes[cont].id}">
+                    <img src="${filmes[cont].URL_poster}" alt="poke" class="card_img">
+                </a>
+
+            </div>`
         }
     })
 }
 function favoritar(id) {
-    if (id == undefined){
+    if (id == undefined) {
         id = localStorage.getItem(1)
         fetch(`${Server_URL}?id=${id}`, { method: "PUT" }).then((response) => response.json())
     }
-    else{
-         fetch(`${Server_URL}?id=${id}`, { method: "PUT" }).then((response) => response.json())
-       fetch(`${Server_URL}?id=${id}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
-        const fav = document.getElementById(`Nfavorite${id}`)
-        if(filmes[0].favorite){
-            fav.src = "imagens/favorite.png"
-        }else{fav.src = "imagens/no_favorite.png"}
-        
+    else {
+        fetch(`${Server_URL}?id=${id}`, { method: "PUT" }).then((response) => response.json())
+        fetch(`${Server_URL}?id=${id}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
+            const fav = document.getElementById(`Nfavorite${id}`)
+            if (filmes[0].favorite) {
+                fav.src = "imagens/favorite.png"
+            } else { fav.src = "imagens/no_favorite.png" }
+
         })
     }
-    
-    
+
+
 
 }
 function pesquisa() {
@@ -128,14 +132,20 @@ function pesquisa() {
     fetch(`${Server_URL}?search=${search}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
         console.log(filmes)
         for (cont = 0; cont < filmes.length; cont++) {
-            cards.innerHTML += `<div class="card">
-            <a href="posterbase.html" onclick="setLocal(${filmes[cont].id})">
-            <div class="absolute">
-            <p>${filmes[cont].titulo}</p>
-            <img src=${filmes[cont].favorite?"imagens/favorite.png":"imagens/no_favorite.png"} id="Nfavorite" alt="" class="star">>    
-            </div class="img-favorite">
-                <img src="${filmes[cont].URL_poster}" alt="poke" class="card_img">
-            </a></div></div>`
+            cards.innerHTML += `
+            <div class="card">
+                <div class="absolute">
+                    <p>${filmes[cont].titulo}</p>
+                    
+                </div>
+                <div class="favorite_icon">
+                    <img src="${filmes[cont].favorite ? "imagens/favorite.png" : "imagens/no_favorite.png"}" id="Nfavorite${filmes[cont].id}" alt="" class="star" onclick="favoritar(${filmes[cont].id})">
+                </div>
+                <a href="posterbase.html" onclick="setLocal(${filmes[cont].id}">
+                    <img src="${filmes[cont].URL_poster}" alt="poke" class="card_img">
+                </a>
+
+            </div>`
         }
     })
 }

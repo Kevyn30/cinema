@@ -16,5 +16,6 @@ function sendForm(){
         'Accept': 'application/json, text/plain, */*',
         'Content-Type': 'application/json'
     }})
+    document.location.href= 'index.html'
     window.alert("Deu certo!")
 }

@@ -3,6 +3,15 @@
 const filmes = [{ nome: "pokemon" }, { nome: "Digimon" }, { nome: "lol" }]
 const Server_URL = "http://localhost:3334/cinema"
 async function load() {
+    let cont = 1
+    setInterval(function () {
+        cont++
+        if (cont >= 5) {
+            cont = 0
+        }
+        document.getElementById(`radio${cont}`).checked = true
+    }, 5000);
+
     const cards = document.getElementById("position-card")
 
 
@@ -28,6 +37,9 @@ async function load() {
             </div>`
         }
     })
+}
+function next() {
+    
 }
 function loadPoster() {
     const id = localStorage.getItem(1)

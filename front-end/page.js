@@ -7,8 +7,9 @@ async function load() {
     setInterval(function () {
         cont++
         if (cont >= 5) {
-            cont = 0
+            cont = 1
         }
+
         document.getElementById(`radio${cont}`).checked = true
     }, 5000);
 

@@ -148,14 +148,22 @@ input[type = "radio"] {
 #radio3:checked ~ .nav_auto #auto_bnt3,
 #radio4:checked ~ .nav_auto #auto_bnt4{
     background-color: rgb(255, 0, 0);
-    border: solid 5px rgb(255, 0, 0);
+    border: solid 1px rgb(255, 255, 255);
 }
-#radio1:checked ~ .first{
-    margin-left: 0;
+
+#radio1:checked ~  .cont-carrocel .slide-box:first-child{
+    margin-left: 0%;
 }
-#radio2:checked ~ .first{
-    margin-left: -175%;
+#radio2:checked ~  .cont-carrocel .slide-box:first-child{
+    margin-left: -25%;
 }
+#radio3:checked ~  .cont-carrocel .slide-box:first-child{
+    margin-left: -50%;
+}
+#radio4:checked ~  .cont-carrocel .slide-box:first-child{
+    margin-left: -75%;
+}
+
 
 .nav_auto{
     max-width: 80%;
@@ -175,7 +183,7 @@ input[type = "radio"] {
     margin-left: 10px;
     width: 25px;
     height: 25px;
-    border: solid 5px #000500;
+    border: solid 1px rgb(255, 255, 255);
     
     border-radius: 50%;
 }

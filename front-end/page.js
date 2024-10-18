@@ -3,22 +3,9 @@
 const filmes = [{ nome: "pokemon" }, { nome: "Digimon" }, { nome: "lol" }]
 const Server_URL = "http://localhost:3334/cinema"
 async function load() {
-    let cont = 1
-    setInterval(function () {
-        cont++
-        if (cont >= 5) {
-            cont = 1
-        }
-
-        document.getElementById(`radio${cont}`).checked = true
-    }, 5000);
-
-    const cards = document.getElementById("position-card")
-
-
-
+    
     //Send Response
-
+    const cards = document.getElementById("position-card")
     fetch(`${Server_URL}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
 
         for (cont = 0; cont < filmes.length; cont++) {
@@ -29,12 +16,11 @@ async function load() {
                     
                 </div>
                 <div class="favorite_icon">
-                    <img src="${filmes[cont].favorite ? "imagens/favorite.png" : "imagens/no_favorite.png"}" id="Nfavorite${filmes[cont].id}" alt="" class="star" onclick="favoritar(${filmes[cont].id})">
+                    <img src="${filmes[cont].favorite?"imagens/favorite.png":"imagens/no_favorite.png"}" id="Nfavorite${filmes[cont].id}" alt="" class="star" onclick="favoritar(${filmes[cont].id})">
                 </div>
                 <a href="posterbase.html" onclick="setLocal(${filmes[cont].id}">
                     <img src="${filmes[cont].URL_poster}" alt="poke" class="card_img">
                 </a>
-
             </div>`
         }
     })
@@ -115,13 +101,13 @@ function favoritos() {
         }
     })
 }
-function favoritar(id) {
+async function favoritar(id) {
     if (id == undefined) {
         id = localStorage.getItem(1)
         fetch(`${Server_URL}?id=${id}`, { method: "PUT" }).then((response) => response.json())
     }
     else {
-        fetch(`${Server_URL}?id=${id}`, { method: "PUT" }).then((response) => response.json())
+        await fetch(`${Server_URL}?id=${id}`, { method: "PUT" }).then()
         fetch(`${Server_URL}?id=${id}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
             const fav = document.getElementById(`Nfavorite${id}`)
             if (filmes[0].favorite) {

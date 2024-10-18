@@ -10,7 +10,7 @@
     <title>cinema</title>
 </head>
 
-<body onload="load()">
+<body onload="load(), load_carrocel()">
     <header>
         <h1><a href="index.html">Poke</a></h1>
         <nav>
@@ -24,7 +24,7 @@
             onkeyup="pesquisa()">
     </header>
     <main>
-        <section class="carrocel">
+        <section class="carrocel" id="carrocel">
             
             <input type="radio" name="radio" id="radio1">
             <input type="radio" name="radio" id="radio2">
@@ -42,36 +42,15 @@
                 <div class="slide-box fist"><img src="https://musicart.xboxlive.com/7/90045100-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080" alt="imagem"></div>
                 <div class="slide-box"><img src="https://upload.wikimedia.org/wikipedia/pt/thumb/f/f5/The_Last_Naruto_the_Movie.jpg/200px-The_Last_Naruto_the_Movie.jpg" alt="imagem"></div>
                 <div class="slide-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXtYWtX5Pf99fKX434XNY2dE7qw_obPHinuQ&s" alt="imagem"></div>
-                <div class="slide-box"><img src="imagens/Carrocel-fullmetal Alchemist.jpg" alt="imagem"></div>
-            </div>
-
-            <div class="manual-navegatio">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-                <label for="radio4" class="manual-btn"></label>
+                <div class="slide-box"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR57U1hqr1vrAx-HucrpKYv7kx903xTHKUw8aGUIVrej5hDM3lz" alt="imagem"></div>
             </div>
 
 
         </section>
 
-        <section class="position-card" id="position-card">
-            <div class="card">
-                <div class="absolute">
-                    <p>titulo</p>
-
-                </div>
-                <div class="favorite_icon">
-                    <img src="imagens/no_favorite.png" id="Nfavorite" alt="" class="star" onclick="alert('pikaxu')">
-                </div>
-                <a href="index.html" onclick="alert('poster')">
-                    <img src="imagens/mimikyu-removebg-preview.png" alt="poke" class="card_img">
-                </a>
-
-            </div>
-        </section>
-    </main>
-    <script src="page.js"></script>
+        <section class="position-card" id="position-card"></section>         
+        <script src="page.js"></script>
+        <script src="carrocel.js"></script>
 </body>
 
 </html>

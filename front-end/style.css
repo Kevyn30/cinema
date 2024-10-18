@@ -157,7 +157,13 @@ a {
 #radio1:checked~.nav_auto #auto_bnt1,
 #radio2:checked~.nav_auto #auto_bnt2,
 #radio3:checked~.nav_auto #auto_bnt3,
-#radio4:checked~.nav_auto #auto_bnt4 {
+#radio4:checked~.nav_auto #auto_bnt4,
+#radio5:checked~.nav_auto #auto_bnt5,
+#radio6:checked~.nav_auto #auto_bnt6,
+#radio7:checked~.nav_auto #auto_bnt7,
+#radio8:checked~.nav_auto #auto_bnt8,
+#radio9:checked~.nav_auto #auto_bnt9,
+#radio10:checked~.nav_auto #auto_bnt10 {
     transition: 0.25s;
     background-color: rgb(255, 0, 0);
     border: solid 1px rgb(255, 255, 255);
@@ -187,12 +193,42 @@ input[type="radio"] {
     transition: 2s;
 }
 
+#radio5:checked~.cont-carrocel .slide-box:first-child {
+    margin-left: -100%;
+    transition: 2s;
+}
+
+#radio6:checked~.cont-carrocel .slide-box:first-child {
+    margin-left: -125%;
+    transition: 2s;
+}
+
+#radio7:checked~.cont-carrocel .slide-box:first-child {
+    margin-left: -150%;
+    transition: 2s;
+}
+
+#radio8:checked~.cont-carrocel .slide-box:first-child {
+    margin-left: -175%;
+    transition: 2s;
+}
+
+#radio9:checked~.cont-carrocel .slide-box:first-child {
+    margin-left: -200%;
+    transition: 2s;
+}
+
+#radio10:checked~.cont-carrocel .slide-box:first-child {
+    margin-left: -225%;
+    transition: 2s;
+}
+
 
 .nav_auto {
     max-width: 80%;
     position: absolute;
     margin-top: 360px;
-    margin-left: 28px ;
+    margin-left: 28px;
     display: flex;
     z-index: 1;
     width: 100%;
@@ -229,5 +265,3 @@ nav ul li a:hover {
     color: blueviolet;
     transition: 0.2s;
 }
-
-/* favorite icon */

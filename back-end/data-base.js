@@ -33,6 +33,15 @@ export class database {
                 URL_trailer: "https://youtu.be/dQw4w9WgXcQ?feature=shared",
                 URL_poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXtYWtX5Pf99fKX434XNY2dE7qw_obPHinuQ&s"
             })
+            this.#filmes.set(3, {
+                titulo: "Fullmetal Alchemist: The Sacred Star of Milos ",
+                nota: 8.0,
+                favorite: false,
+                diretor: "Kazuya Murata",
+                synopsis: "Na terra sagrada perdida de Milos, os Elrics buscam a verdade por trás de uma forma desconhecida de alquimia. Quais segredos estão escondidos em Milos? Enigmas devem ser resolvidos e perigos enfrentados antes que a verdade possa ser encontrada.",
+                URL_trailer: "https://youtu.be/c29kC6Ja_f0?feature=shared",
+                URL_poster: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR57U1hqr1vrAx-HucrpKYv7kx903xTHKUw8aGUIVrej5hDM3lz"
+            })
             this.init = 2
         }
         return Array.from(this.#filmes.entries())

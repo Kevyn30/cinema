@@ -27,10 +27,14 @@ function load_carrocel() {
             <label for="radio${cont}" class="auto_bnt" id="auto_bnt${cont}"></label>
             `
         }
-        newCarrocel.innerHTML += `<div class="cont-carrocel">`
-        newCarrocel.innerHTML += ``
-        newCarrocel.innerHTML += `</div>`
-
+        newCarrocel.innerHTML += `<div class="cont-carrocel"></div>`
+        const newImgCarrocel = document.getElementById("")
+        for (cont = 1; cont <= filmes.length; cont++) {
+            newNavAuto.innerHTML += `
+            <div class="slide-box fist"><img src="${filmes[cont].URL_poster}"></div>
+            `
+        }
+        
 
         let newcont = 1
         setInterval(function () {

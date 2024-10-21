@@ -1,4 +1,5 @@
 
+
 function load_carrocel() {
     fetch(`${Server_URL}`, { method: "GET" }).then((response) => response.json()).then((filmes) => {
         filmes.sort((a, b) => {
@@ -27,10 +28,10 @@ function load_carrocel() {
             <label for="radio${cont}" class="auto_bnt" id="auto_bnt${cont}"></label>
             `
         }
-        newCarrocel.innerHTML += `<div class="cont-carrocel"></div>`
-        const newImgCarrocel = document.getElementById("")
+        newCarrocel.innerHTML += `<div class="cont-carrocel" id="slid_carrocel"></div>`
+        const newImgCarrocel = document.getElementById("slid_carrocel")
         for (cont = 1; cont <= filmes.length; cont++) {
-            newNavAuto.innerHTML += `
+            newImgCarrocel.innerHTML += `
             <div class="slide-box fist"><img src="${filmes[cont].URL_poster}"></div>
             `
         }
@@ -44,7 +45,7 @@ function load_carrocel() {
             }
 
             document.getElementById(`radio${newcont}`).checked = true
-        }, 5000);
+        }, 7000);
     })
 
 
